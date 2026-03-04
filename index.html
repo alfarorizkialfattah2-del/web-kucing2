@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Kucing Misterius</title>
+    <style>
+        body {
+            font-family: 'Georgia', sans-serif;
+            background-color: #ffe4e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Halaman Utama */
+        #main-page { display: block; }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Tombol Kepala Kucing */
+        .cat-btn {
+            width: 120px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .cat-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .cat-btn svg {
+            width: 100%;
+            height: auto;
+            fill: #444;
+        }
+
+        /* Halaman Surat */
+        .page-surat {
+            display: none; /* Sembunyi dulu */
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 400px;
+            animation: muncul 0.5s ease-out;
+        }
+
+        @keyframes muncul {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        h2 { color: #ff6b6b; }
+        p { line-height: 1.6; color: #555; }
+    </style>
+</head>
+<body>
+
+    <div id="main-page">
+        <h1>PILIHH KUCING LUHKKK🐾</h1>
+        <p>Klik salah satu buruu</p>
+        <div class="container">
+            <div class="cat-btn" onclick="bukaSurat(1)">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="55" r="35" fill="#FFB6C1"/>
+                    <path d="M20 30 L40 50 L15 55 Z" fill="#FFB6C1"/>
+                    <path d="M80 30 L60 50 L85 55 Z" fill="#FFB6C1"/>
+                    <circle cx="40" cy="55" r="3" fill="black"/>
+                    <circle cx="60" cy="55" r="3" fill="black"/>
+                    <path d="M45 65 Q50 70 55 65" stroke="black" fill="none"/>
+                </svg>
+                <p>kucing nakal (haters alfaro)</p>
+            </div>
+
+            <div class="cat-btn" onclick="bukaSurat(2)">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="55" r="35" fill="#87CEEB"/>
+                    <path d="M20 30 L40 50 L15 55 Z" fill="#87CEEB"/>
+                    <path d="M80 30 L60 50 L85 55 Z" fill="#87CEEB"/>
+                    <circle cx="40" cy="55" r="3" fill="black"/>
+                    <circle cx="60" cy="55" r="3" fill="black"/>
+                    <path d="M45 65 Q50 70 55 65" stroke="black" fill="none"/>
+                </svg>
+                <p>Kucing Biru(anak gua)</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="surat-1" class="page-surat">
+        <h2>RAWR</h2>
+        <hr>
+        <p>MOKELLL YUKKKK</p>
+        <button class="btn-back" onclick="kembali()">Kembali</button>
+    </div>
+
+    <div id="surat-2" class="page-surat">
+        <h2>DUARRR</h2>
+        <hr>
+        <p>AYU MABAR ROBLOXXX, GUA GABUTT NJIEESSDSDSRR</p>
+        <button class="btn-back" onclick="kembali()">Kembali</button>
+    </div>
+
+    <script>
+        function bukaSurat(nomor) {
+            // Sembunyikan halaman utama
+            document.getElementById('main-page').style.display = 'none';
+            // Tampilkan surat yang dipilih
+            document.getElementById('surat-' + nomor).style.display = 'block';
+        }
+
+        function kembali() {
+            // Sembunyikan semua surat
+            document.getElementById('surat-1').style.display = 'none';
+            document.getElementById('surat-2').style.display = 'none';
+            // Tampilkan kembali halaman utama
+            document.getElementById('main-page').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Interaktif Hewan & Gambar</title>
+    <style>
+        /* CSS: Pengaturan Olive Green & Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #bab86c; /* Dark Olive Green */
+            color: white; /* Teks putih agar kontras */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Halaman Utama */
+        #main-page { display: block; padding: 20px; width: 100%; max-width: 600px; }
+
+        h1 { margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+
+        /* Container Tombol */
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
